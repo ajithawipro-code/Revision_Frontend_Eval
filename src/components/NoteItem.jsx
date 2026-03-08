@@ -11,7 +11,7 @@ export const NoteItem = ({item}) =>{
     return (
         <div>
            <span onClick={()=>toggleNote(item.id)}>{item.note}</span>
-           <p>{item.note}</p>
+        
            <p>{item.id}</p>
            <p>{item.completed}</p>
         </div>

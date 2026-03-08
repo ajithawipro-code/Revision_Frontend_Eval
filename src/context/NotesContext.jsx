@@ -6,7 +6,14 @@ export const NotesContext = createContext();
 
     const [notes,setNotes] = useState([]);
 
-    useEffect(()=>{
+       useEffect(()=>{
+
+        localStorage.setItem("notes", JSON.stringify(notes));
+
+    },[notes]);
+
+        useEffect(()=>{
+
         const storedNotes = JSON.parse(localStorage.getItem("notes"));
 
         if(storedNotes)
@@ -15,16 +22,14 @@ export const NotesContext = createContext();
         }
     },[]);
 
-    useEffect(()=>{
-        
-        localStorage.setItem("notes", JSON.stringify(notes));
+ 
 
-    },[notes]);
-
-    const addNotes =(note) =>{
+      const addNotes =(note) =>{
 
         setNotes([...notes, {id: Date.now(), note, completed : true}])
     }
+
+      
 
     const toggleNote = (id) =>{
 
@@ -33,6 +38,9 @@ export const NotesContext = createContext();
         setNotes(completedNote);
 
     }
+
+
+
 
     return (
         <div>

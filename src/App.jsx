@@ -1,6 +1,7 @@
 import NotesProvider from "./context/NotesContext";
 
 import { AddNote } from "./components/AddNote";
+import { NoteList } from "./components/NoteList";
 
 export default function App(){
 
@@ -8,6 +9,7 @@ export default function App(){
     <div>
       
       <AddNote />
+      <NoteList />
 
     </div>
 

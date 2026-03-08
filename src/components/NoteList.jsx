@@ -1,6 +1,6 @@
 import react from "react";
 import { NotesContext } from "../context/NotesContext";
-import { useContext } from "react";
+import { useContext , useMemo} from "react";
 import { NoteItem } from "./NoteItem";
 
 export const NoteList = () =>{
@@ -10,7 +10,7 @@ export const NoteList = () =>{
     const totalNotes = useMemo(()=>{
 
         return notes.map((note)=>note.id)
-        
+
     },[notes]);
 
     return (
